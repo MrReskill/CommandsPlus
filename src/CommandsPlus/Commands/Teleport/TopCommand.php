@@ -11,7 +11,7 @@ class TopCommand extends Command
     
     public function __construct()
     {
-        parent::__construct("top", "Returns you to your last death position.", "/top");
+        parent::__construct("top", "Teleports you to the highest block at your current location.", "/top");
         $this->setPermission("commandsplus.command.top");
     }
     
