@@ -7,7 +7,7 @@ use pocketmine\event\Listener;
 use CommandsPlus\BaseFiles\API;
 use CommandsPlus\Commands\Cheat\{BreakCommand, FeedCommand, HealCommand, MoreCommand, RepairCommand};
 use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand};
-use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, InvseeCommand, KickallCommand, MuteCommand};
+use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, UnfreezeCommand};
 use CommandsPlus\Commands\Spawn\SpawnCommand;
 use CommandsPlus\Commands\Teleport\{BackCommand, TopCommand, TpallCommand, WorldCommand};
 use CommandsPlus\Events\{InventoryClose, InventoryTransaction, PlayerChat, PlayerCommandPreprocess, PlayerDeath, PlayerQuit};
@@ -60,6 +60,7 @@ class Main extends PluginBase implements Listener
                      "clearinventory" => new ClearinventoryCommand, 
                      "ext" => new ExtCommand, 
                      "feed" => new FeedCommand, 
+                     "freeze" => new FreezeCommand,
                      "getpos" => new GetposCommand, 
                      "heal" => new HealCommand, 
                      "helpop" => new HelpopCommand, 
@@ -73,7 +74,8 @@ class Main extends PluginBase implements Listener
                      "repair" => new RepairCommand, 
                      "spawn" => new SpawnCommand, 
                      "top" => new TopCommand, 
-                     "tpall" => new TpallCommand, 
+                     "tpall" => new TpallCommand,
+                     "unfreeze" => new UnfreezeCommand,
                      "world" => new WorldCommand];
         foreach($commands as $command => $instance) $this->getServer()->getCommandMap()->register($command, $instance);
     } 
