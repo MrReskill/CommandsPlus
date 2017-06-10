@@ -7,7 +7,7 @@ class FlyCommands extends Command
     
     public function __construct()
     {
-        parent::__construct("fly", "Use fly on your server", "/fly <player>");
+        parent::__construct("fly", "Use fly on your server", "/fly");
         $this->setPermission("commandsplus.command.fly");
     }
     
