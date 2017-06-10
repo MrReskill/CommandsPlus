@@ -6,7 +6,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use CommandsPlus\BaseFiles\API;
 use CommandsPlus\Commands\Cheat\{BreakCommand, FeedCommand, HealCommand, MoreCommand, RepairCommand};
-use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand};
+use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand, WhoisCommand};
 use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, UnfreezeCommand};
 use CommandsPlus\Commands\Spawn\SpawnCommand;
 use CommandsPlus\Commands\Teleport\{BackCommand, TopCommand, TpallCommand, WorldCommand};
@@ -76,6 +76,7 @@ class Main extends PluginBase implements Listener
                      "top" => new TopCommand, 
                      "tpall" => new TpallCommand,
                      "unfreeze" => new UnfreezeCommand,
+                     "whois" => new WhoisCommand,
                      "world" => new WorldCommand];
         foreach($commands as $command => $instance) $this->getServer()->getCommandMap()->register($command, $instance);
     } 
