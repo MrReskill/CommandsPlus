@@ -7,7 +7,7 @@ use pocketmine\event\Listener;
 use CommandsPlus\BaseFiles\API;
 use CommandsPlus\Commands\Cheat\{BreakCommand, FeedCommand, HealCommand, MoreCommand, RepairCommand};
 use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand, TellCommand, WhoisCommand};
-use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, SocialspyCommand, UnfreezeCommand};
+use CommandsPlus\Commands\Moderator\{BurnCommand, FlyCommands, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, SocialspyCommand, UnfreezeCommand};
 use CommandsPlus\Commands\Spawn\SpawnCommand;
 use CommandsPlus\Commands\Teleport\{BackCommand, TopCommand, TpallCommand, WorldCommand};
 use CommandsPlus\Events\{InventoryClose, InventoryTransaction, PlayerChat, PlayerCommandPreprocess, PlayerDeath, PlayerQuit};
@@ -60,6 +60,7 @@ class Main extends PluginBase implements Listener
                      "clearinventory" => new ClearinventoryCommand, 
                      "ext" => new ExtCommand, 
                      "feed" => new FeedCommand,
+                     "fly" => new FlyCommands,
                      "freeze" => new FreezeCommand,
                      "getpos" => new GetposCommand, 
                      "heal" => new HealCommand, 
