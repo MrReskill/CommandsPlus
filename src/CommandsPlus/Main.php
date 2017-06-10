@@ -6,8 +6,8 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use CommandsPlus\BaseFiles\API;
 use CommandsPlus\Commands\Cheat\{BreakCommand, FeedCommand, HealCommand, MoreCommand, RepairCommand};
-use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand, WhoisCommand};
-use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, UnfreezeCommand};
+use CommandsPlus\Commands\General\{GetposCommand, HelpopCommand, ItemdbCommand, NickCommand, RealnameCommand, TellCommand, WhoisCommand};
+use CommandsPlus\Commands\Moderator\{BurnCommand, ClearinventoryCommand, ExtCommand, FreezeCommand, InvseeCommand, KickallCommand, MuteCommand, SocialspyCommand, UnfreezeCommand};
 use CommandsPlus\Commands\Spawn\SpawnCommand;
 use CommandsPlus\Commands\Teleport\{BackCommand, TopCommand, TpallCommand, WorldCommand};
 use CommandsPlus\Events\{InventoryClose, InventoryTransaction, PlayerChat, PlayerCommandPreprocess, PlayerDeath, PlayerQuit};
@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener
                      "burn" => new BurnCommand, 
                      "clearinventory" => new ClearinventoryCommand, 
                      "ext" => new ExtCommand, 
-                     "feed" => new FeedCommand, 
+                     "feed" => new FeedCommand,
                      "freeze" => new FreezeCommand,
                      "getpos" => new GetposCommand, 
                      "heal" => new HealCommand, 
@@ -72,12 +72,16 @@ class Main extends PluginBase implements Listener
                      "nick" => new NickCommand, 
                      "realname" => new RealnameCommand, 
                      "repair" => new RepairCommand, 
-                     "spawn" => new SpawnCommand, 
+                     "socialspy" => new SocialspyCommand,
+                     "spawn" => new SpawnCommand,
+                     "tell" => new TellCommand, 
                      "top" => new TopCommand, 
-                     "tpall" => new TpallCommand,
+                     "tpall" => new TpallCommand, 
                      "unfreeze" => new UnfreezeCommand,
                      "whois" => new WhoisCommand,
                      "world" => new WorldCommand];
+        $this->getServer()->getCommandMap()->getCommand("tell")->setLabel("tell__");
+        $this->getServer()->getCommandMap()->getCommand("tell")->unregister($this->getServer()->getCommandMap());
         foreach($commands as $command => $instance) $this->getServer()->getCommandMap()->register($command, $instance);
     } 
     
