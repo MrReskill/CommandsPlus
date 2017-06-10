@@ -13,7 +13,6 @@ class TellCommand extends Command
     public function __construct()
     {
         parent::__construct("tell", "This allows you to private message another player.", "/tell <player> <message...>", ["w", "msg"]);
-        $this->setPermission("commandsplus.command.tell");
     }
     
     public function execute(CommandSender $sender, $currentAlias, array $args)
