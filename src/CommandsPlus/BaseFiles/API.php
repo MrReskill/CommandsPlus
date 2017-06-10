@@ -12,6 +12,7 @@ class API
     public $skins = [];
     public $invsees = [];
     public $backs = [];
+    public $socialspies = [];
     
     private $owner; 
     

@@ -14,6 +14,7 @@ class Profile
     private $skins;
     private $nicks;
     private $backs;
+    private $socialspies;
     
     public function __construct(Player $player)
     {
@@ -23,6 +24,7 @@ class Profile
         $this->skins = Main::getInstance()->getAPI()->skins;
         $this->nicks = Main::getInstance()->getAPI()->nicks;
         $this->backs = Main::getInstance()->getAPI()->backs;
+        $this->socialspies = Main::getInstance()->getAPI()->socialspies;
     }
     
     /*
@@ -146,5 +148,28 @@ class Profile
     {
         $this->mutes->set($this->name, time() + $minutes * 60);
         $this->mutes->save();
+    }
+    
+    /*
+     *
+     *  ________   _______   _______   _______   _______   ___       ________   _______   _________
+     * |        | |       | |       | |       | |       | |   |     |        | |       | |    |    |
+     * |   _____| |       | |    ___| |_     _| |       | |   |     |   _____| |       | |    |    |
+     *  \____  \  |       | |   |       |   |   |       | |   |      \____  \  |    ___| |__     __|
+     *  _____|  | |       | |   |___   _|   |_  |       | |   |___   _____|  | |   |        |   |
+     * |        | |       | |       | |       | |   |   | |       | |        | |   |        |   |
+     * |________| |_______| |_______| |_______| |___|___| |_______| |________| |___|        |___|
+     *
+     *
+    */ 
+    
+    public function isSocialspy() : bool
+    {
+        return isset($this->socialspies[array_search($this->name, $this->socialspies)]);
+    }
+
+    public function setSocialspy()
+    {
+        array_push(Main::getInstance()->getAPI()->socialspies, $this->name);
     }
 }
