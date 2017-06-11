@@ -89,6 +89,7 @@ class Main extends PluginBase implements Listener
     {
         if(!file_exists($this->getDataFolder())) mkdir($this->getDataFolder());
         $this->mutes = new Config($this->getDataFolder()."Mutes.yml", Config::YAML, []);
+        $this->mod = new Config($this->getDataFolder()."ModerationPlus.yml", Config::YAML, []);
     }
     
     public function onDisable()
