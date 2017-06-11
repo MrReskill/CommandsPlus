@@ -1,5 +1,5 @@
 <?php
-namespace CommandsPlus\Commands\Moderation;
+namespace CommandsPlus\Commands\Moderator;
 use pocketmine\command\{Command, CommandSender};
 use CommandsPlus\Main;
 class FlyCommand extends Command
