@@ -2,7 +2,7 @@
 namespace CommandsPlus\Commands\Moderation;
 use pocketmine\command\{Command, CommandSender};
 use CommandsPlus\Main;
-class FlyCommands extends Command
+class FlyCommand extends Command
 {
     
     public function __construct()
