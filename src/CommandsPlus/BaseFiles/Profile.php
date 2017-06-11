@@ -11,6 +11,7 @@ class Profile
     private $player;
     private $name;
     private $mutes;
+    private $mod;
     private $skins;
     private $nicks;
     private $backs;
@@ -23,6 +24,7 @@ class Profile
         $this->mutes = Main::getInstance()->mutes;
         $this->skins = Main::getInstance()->getAPI()->skins;
         $this->nicks = Main::getInstance()->getAPI()->nicks;
+        $this->mod = Main::getInstance()->mod;
         $this->backs = Main::getInstance()->getAPI()->backs;
         $this->socialspies = Main::getInstance()->getAPI()->socialspies;
     }
@@ -172,4 +174,18 @@ class Profile
     {
         array_push(Main::getInstance()->getAPI()->socialspies, $this->name);
     }
+    
+   //     ___  ___          _       
+   //     |  \/  |         | |  _   
+   //     | .  . | ___   __| |_| |_ 
+   //     | |\/| |/ _ \ / _` |_   _|
+   //     | |  | | (_) | (_| | |_|  
+   //     \_|  |_/\___/ \__,_|      
+    
+   public function getModConfig($config) {
+       return $this->mod->get($config);
+   }
+                          
+                          
+    
 }
